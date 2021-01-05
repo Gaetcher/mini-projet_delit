@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ContactController extends AbstractController
 {
@@ -23,12 +24,14 @@ class ContactController extends AbstractController
         ]);
         $form->handleRequest($request);
         
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($contact);
-            $em->flush();
-            return $this->render('contact/index.html.twig', [
-                'contact_form' => $form->createView(),
-            ]);
+        if ($request->isXmlHttpRequest() && $form->isSubmitted()) {
+            if ($form->isValid()) {
+                $em->persist($contact);
+                $em->flush();
+                return new JsonResponse(['success' => 1], 200);
+            } else {
+                return new JsonResponse(['error' => 'Formulaire invalide'], 400);
+            }
         }
 
         return $this->render('contact/index.html.twig', [

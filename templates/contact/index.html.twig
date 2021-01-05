@@ -25,32 +25,32 @@
 					<div class="col-md">
 						{{ form_row(contact_form.firstname, {'attr': {'class' : 'contact-form__field'} }) }}
 					</div>
-					<div id="userInfo-helper" class="col-12 d-none text-danger">
-						<p>Erreur Merci de renseigner un nom et un prénom comprenant entre 2 et 100 caractères.</p>
+					<div id="userInfo-helper" class="col-12 d-none">
+						<p class="text-danger">Erreur Merci de renseigner un nom et un prénom comprenant entre 2 et 100 caractères.</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
 						{{ form_row(contact_form.email, {'attr': {'class' : 'contact-form__field'} }) }}
 					</div>
-					<div id="email-helper" class="col-12 d-none text-danger">
-						<p>Erreur Merci de renseigner une adresse email valide (ex: adresse.mail@exemple.com).</p>
+					<div id="email-helper" class="col-12 d-none">
+						<p class="text-danger">Erreur Merci de renseigner une adresse email valide (ex: adresse.mail@exemple.com).</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
 						{{ form_row(contact_form.subject, {'attr': {'class' : 'contact-form__field'} }) }}
 					</div>
-					<div id="subject-helper" class="col-12 d-none text-danger">
-						<p>Erreur Merci de renseigner un objet comprenant entre 2 et 100 caractères.</p>
+					<div id="subject-helper" class="col-12 d-none">
+						<p class="text-danger">Erreur Merci de renseigner un objet comprenant entre 2 et 100 caractères.</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
 						{{ form_row(contact_form.message, {'attr': {'class' : 'contact-form__field'} }) }}
 					</div>
-					<div id="text-helper" class="col-12 d-none text-danger">
-						<p>Erreur Merci de renseigner un message comprenant au moins 10 caractères.</p>
+					<div id="text-helper" class="col-12 d-none">
+						<p class="text-danger">Erreur Merci de renseigner un message comprenant au moins 10 caractères.</p>
 					</div>
 				</div>
 				{{ form_rest(contact_form) }}
