@@ -1,0 +1,15 @@
+* {
+    font-family: $audiowide;
+    color: $text-color;
+}
+
+.contact-form {
+    &__field {
+        border: 1px solid $main-color;
+        border-radius: 0;
+        &:focus {
+            border-color: $main-color;
+            box-shadow: 0 0 0.3rem 0.2rem $hover-color;
+        }
+    }
+}

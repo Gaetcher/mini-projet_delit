@@ -1,0 +1,52 @@
+.button {
+    position: relative;
+    padding-top: .2rem;
+    padding-right: 2.4rem;
+    padding-bottom: .6rem;
+    padding-left: .3rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid $text-color;
+    font-size: 2rem;
+    color: $text-color;
+    font-family: $audiowide;
+    text-shadow: 2px -2px 5px $hover-color;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: $text-color--hover;
+        &::before {
+            transform: translate(0);
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid $text-color;
+        transform: translate(-11px, -6px);
+        transition: .25s ease-in-out;
+
+    }
+
+    @include mediaQueryTo(s) {
+        font-size: 1.2rem;
+    }
+
+    @include mediaQueryTo(m) {
+        font-size: 1.8rem;
+    }
+
+    @include mediaQueryTo(l) {
+        font-size: 1.1rem;
+    }
+
+    @include mediaQueryTo(xl) {
+        font-size: 1.8rem;
+    }
+}

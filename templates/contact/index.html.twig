@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Contact Délit D'Influence
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<main class="row vh-100">
+			<div class="contact-form col-lg-4 mx-auto d-flex flex-column justify-content-center">
+				<h1>Contactez nous</h1>
+				{{ form_start(contact_form, {'attr': {'id': 'contact-form'} }) }}
+				<div class="row">
+					<div class="col-md">
+						{{ form_row(contact_form.name, {'attr': {'class' : 'contact-form__field'} }) }}
+					</div>
+					<div class="col-md">
+						{{ form_row(contact_form.firstname, {'attr': {'class' : 'contact-form__field'} }) }}
+					</div>
+					<div id="userInfo-helper" class="col-12 d-none text-danger">
+						<p>Erreur Merci de renseigner un nom et un prénom comprenant entre 2 et 100 caractères.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						{{ form_row(contact_form.email, {'attr': {'class' : 'contact-form__field'} }) }}
+					</div>
+					<div id="email-helper" class="col-12 d-none text-danger">
+						<p>Erreur Merci de renseigner une adresse email valide (ex: adresse.mail@exemple.com).</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						{{ form_row(contact_form.subject, {'attr': {'class' : 'contact-form__field'} }) }}
+					</div>
+					<div id="subject-helper" class="col-12 d-none text-danger">
+						<p>Erreur Merci de renseigner un objet comprenant entre 2 et 100 caractères.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						{{ form_row(contact_form.message, {'attr': {'class' : 'contact-form__field'} }) }}
+					</div>
+					<div id="text-helper" class="col-12 d-none text-danger">
+						<p>Erreur Merci de renseigner un message comprenant au moins 10 caractères.</p>
+					</div>
+				</div>
+				{{ form_rest(contact_form) }}
+				<div class="row contact-form__button">
+					<div class="col-12 mx-auto text-center">
+						<h4 id="send-message" class="col-12 mx-auto my-3 text-center d-none">Envoi du message...</h4>
+						<button id="send-button" type="submit" class="button mx-auto d-block">Envoyer</button>
+					</div>
+				</div>
+				{{ form_end(contact_form) }}
+			</div>
+		</main>
+	</div>
+{% endblock %}

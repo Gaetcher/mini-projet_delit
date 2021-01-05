@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/utilities";
+
+@import "utils/breakpoints";
+@import "utils/colors";
+@import "utils/fonts";
+
+
+@import "components/button";
+
+@import "pages/contact/contact"
